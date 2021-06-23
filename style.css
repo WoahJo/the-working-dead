@@ -21,12 +21,15 @@
     text-align: center;
 }
 
-.choice, #usr-play > button {
+.choice {
     margin: 15px 70px 15px 70px;
     width: 200px;
     height: 200px;
 }
 
+
+
 #choices, #usr-play {
     text-align: center;
+    
 }

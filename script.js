@@ -96,6 +96,7 @@ function playRound(userTurn, compTurn){
         plyArea.appendChild(againButton);
         choices.remove();
         againButton.textContent = "Try again?";
+        againButton.classList.add("choice");
         againButton.addEventListener("click", tryAgain);
         return;
     }
