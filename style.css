@@ -1,0 +1,32 @@
+/* html {
+    background-color: black;
+
+} */
+
+#description {
+    text-align: center;
+    padding: 40px 200px 10px 200px;
+}
+
+#stats{
+    text-align: center;
+}
+
+.statRow {
+    display: inline-block;
+    padding: 50px;
+}
+
+#results, #cpuPlay {
+    text-align: center;
+}
+
+.choice, #usr-play > button {
+    margin: 15px 70px 15px 70px;
+    width: 200px;
+    height: 200px;
+}
+
+#choices, #usr-play {
+    text-align: center;
+}
