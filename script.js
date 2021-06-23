@@ -38,10 +38,12 @@ function playRound(userTurn, compTurn){
         let rando = Math.floor(Math.random() * 3);
         return choices[rando];
     }
+
     //Create variable and assign the computerPlay result to the variable
     compTurn = computerPlay();
     userTurn = userTurn.toLowerCase();
 
+    //Start a new game
     function tryAgain(){
         plyArea.appendChild(choices);
         againButton.remove();
@@ -52,12 +54,24 @@ function playRound(userTurn, compTurn){
         playRound();
     }
 
+    //Actions at the end of a match
+    function endOfMatch(){
+        plyArea.appendChild(againButton);
+        choices.remove();
+        againButton.textContent = "Try again?";
+        againButton.classList.add('tryAgain');
+        againButton.addEventListener("click", tryAgain);
+        return;
+    }
+
+    //Display stats
     function stats(){
         usrDeclare.textContent = `Your score: ${usrPoints}`;
         cpuDeclare.textContent = `CPU score: ${cpuPoints}`;
         rndsDeclare.textContent = `Round: ${rnds}`;
     }
 
+    //Determine round winner
     switch(true){
         case compTurn === userTurn: 
         declare.textContent = `You both chose ${userTurn}! It's a tie!`;
@@ -66,39 +80,28 @@ function playRound(userTurn, compTurn){
         break;
 
         case (userTurn == "rock" && compTurn == "scissors") || (userTurn == "paper" && compTurn == "rock") || (userTurn == "scissors" && compTurn == "paper"): 
-        declare.textContent = `You chose ${userTurn} and Computer chose ${compTurn}. You win!`;
+        declare.textContent = `CPU chose ${compTurn}. You win!`;
         usrPoints += 1; 
         rnds += 1;
         stats();
         break;
 
         default: 
-        declare.textContent = `You chose ${userTurn} and Computer chose ${compTurn}! You lose!`;
+        declare.textContent = `CPU chose ${compTurn}. CPU wins!`;
         cpuPoints += 1; 
         rnds += 1;
         stats();
         break;
     }
 
+    //Determine overall winner
     if((usrPoints == 5 && usrPoints > cpuPoints)){
         declare.textContent = `You beat the CPU in ${rnds} rounds!`;
-        plyArea.appendChild(againButton);
-        choices.remove();
-        againButton.textContent = "Try again?";
-        againButton.addEventListener("click", tryAgain);
-        return;
+        endOfMatch();
     }
-    else if((usrPoints == 5 && usrPoints == cpuPoints)){
-        declare.textContent = `It's a tie.`;
-    }
-    else if((cpuPoints == 5 && cpuPoints > usrPoints)){
+    else if (cpuPoints == 5 && cpuPoints > usrPoints){
         declare.textContent = `CPU beat you in ${rnds} rounds!`;
-        plyArea.appendChild(againButton);
-        choices.remove();
-        againButton.textContent = "Try again?";
-        againButton.classList.add("choice");
-        againButton.addEventListener("click", tryAgain);
-        return;
+        endOfMatch();
     }
 }
 // playRound();

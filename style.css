@@ -1,11 +1,16 @@
-/* html {
-    background-color: black;
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
 
-} */
+
+html {
+    background: #1b140f;
+}
 
 #description {
     text-align: center;
-    padding: 40px 200px 10px 200px;
+    padding: 30px 200px 10px 200px;
 }
 
 #stats{
@@ -13,15 +18,20 @@
 }
 
 .statRow {
+    align-items: center;
     display: inline-block;
+    width: 225px;
     padding: 50px;
+    color: rgb(240, 84, 48);
+    font-family: 'Ropa Sans', sans-serif; 
+    font-size: 23px;
 }
 
 #results, #cpuPlay {
     text-align: center;
 }
 
-.choice {
+.choice,  .tryAgain {
     margin: 15px 70px 15px 70px;
     width: 200px;
     height: 200px;
@@ -32,4 +42,23 @@
 #choices, #usr-play {
     text-align: center;
     
+}
+#title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #d90000;
+    font-family: 'Knewave', sans-serif;
+    font-size: 5em;;
+}
+#info {
+    color: #ecd386;
+    font-family: sans-serif;
+    font-size: 21px;
+    line-height: 150%;
+    font-family: 'Ropa Sans', cursive;
+}
+
+#results > h2 {
+    height: 50px;
+    color: olive;
 }
