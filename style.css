@@ -5,16 +5,18 @@
 
 
 html {
-    background: #1b140f;
+    background: #0f0b0f;
 }
 
 #description {
     text-align: center;
-    padding: 30px 200px 10px 200px;
+    padding: 30px 20% 10px 20%;
 }
 
 #stats{
     text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .statRow {
@@ -22,6 +24,7 @@ html {
     display: inline-block;
     width: 225px;
     padding: 50px;
+    padding-top: 25px;
     color: rgb(240, 84, 48);
     font-family: 'Ropa Sans', sans-serif; 
     font-size: 23px;
@@ -52,10 +55,16 @@ html {
     box-shadow: 5px 5px 5px orange;
 }
 
+.choiceFocus {
+    border: rgb(170, 170, 49) 12px solid;
+    box-shadow: 2px 5px 20px rgb(159, 219, 90);
+}
+
 
 
 #choices, #usr-play {
     text-align: center;
+    height: 250px;
     
 }
 #title {
@@ -63,19 +72,20 @@ html {
     margin-bottom: 20px;
     color: #d90000;
     font-family: 'Knewave', sans-serif;
-    font-size: 5em;;
+    font-size: 4em;;
 }
 #info {
     color: #ecd386;
     font-family: sans-serif;
-    font-size: 22px;
-    line-height: 150%;
+    font-size: 20px;
+    line-height: 130%;
     font-family: 'Ropa Sans', cursive;
+    text-align: justify;
 }
 
 #results > h2 {
     height: 50px;
-    color: rgb(131, 153, 120);
+    color: rgb(109, 155, 87);
     font-size: 30px;
     font-family: 'Rope Sans', sans-serif;
 }

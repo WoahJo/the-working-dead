@@ -22,13 +22,14 @@ let usrPoints = 0;
 let cpuPoints = 0;
 let rnds = 0;
 
-usrDeclare.textContent = `Your score: ${usrPoints}`;
-cpuDeclare.textContent = `CPU score: ${cpuPoints}`;
+usrDeclare.textContent = `You: ${usrPoints}`;
+cpuDeclare.textContent = `Lurker: ${cpuPoints}`;
 rndsDeclare.textContent = `Round: ${rnds}`;
 
 function playRound(userTurn, compTurn){
-    usrDeclare.textContent = `Your score: ${usrPoints}`;
-    cpuDeclare.textContent = `CPU score: ${cpuPoints}`;
+
+    usrDeclare.textContent = `You: ${usrPoints}`;
+    cpuDeclare.textContent = `Lurker: ${cpuPoints}`;
     rndsDeclare.textContent = `Round: ${rnds}`;
 
     //Function (computerPlay) that randomly selects rock, paper or scissors
@@ -65,42 +66,58 @@ function playRound(userTurn, compTurn){
 
     //Display stats
     function stats(){
-        usrDeclare.textContent = `Your score: ${usrPoints}`;
-        cpuDeclare.textContent = `CPU score: ${cpuPoints}`;
+        usrDeclare.textContent = `You: ${usrPoints}`;
+        cpuDeclare.textContent = `Lurker: ${cpuPoints}`;
         rndsDeclare.textContent = `Round: ${rnds}`;
     }
 
     //Determine round winner
     switch(true){
+        //Tie
         case compTurn === userTurn: 
-        declare.textContent = `You both chose ${userTurn}! It's a tie!`;
-        rnds += 1;
-        rndsDeclare.textContent = `Round: ${rnds}`;
-        break;
+            rnds += 1;
+            setTimeout(() => {
+                declare.textContent = `You both chose ${userTurn}! It's a tie!`;
+                stats();
+            }, 500);
+            btn.classList.toggle('choiceFocus', false);
+            break;
 
+        //Announces win and updates score with a 1 second delay
         case (userTurn == "rock" && compTurn == "scissors") || (userTurn == "paper" && compTurn == "rock") || (userTurn == "scissors" && compTurn == "paper"): 
-        declare.textContent = `CPU chose ${compTurn}. You win!`;
-        usrPoints += 1; 
-        rnds += 1;
-        stats();
-        break;
-
-        default: 
-        declare.textContent = `CPU chose ${compTurn}. CPU wins!`;
-        cpuPoints += 1; 
-        rnds += 1;
-        stats();
-        break;
+            usrPoints += 1; 
+            rnds += 1;
+            setTimeout(() => {
+                declare.textContent = `Lurker chose ${compTurn}. You win!`;
+                stats();
+            }, 500);
+            btn.classList.toggle('choiceFocus', false);
+            break;
+            
+            //Annouces loss and updates score with 1 second delay
+        default:
+            cpuPoints += 1; 
+            rnds += 1;
+            setTimeout(() => {
+                declare.textContent = `Lurker chose ${compTurn} and wins!`;
+            stats();
+            }, 500);
+            btn.classList.toggle('choiceFocus', false);
+        break;  
     }
 
     //Determine overall winner
     if((usrPoints == 5 && usrPoints > cpuPoints)){
-        declare.textContent = `You beat the CPU in ${rnds} rounds!`;
+        choices.remove();
+        setTimeout(() => {declare.textContent = `You beat the Lurker in ${rnds} rounds! Try again?`;
         endOfMatch();
+        }, 3000);
     }
     else if (cpuPoints == 5 && cpuPoints > usrPoints){
-        declare.textContent = `CPU beat you in ${rnds} rounds!`;
+        choices.remove();
+        setTimeout(() => {declare.textContent = `Lurker beat you in ${rnds} rounds! Try again?`; 
         endOfMatch();
+        }, 3000);
     }
 }
 // playRound();
@@ -109,8 +126,9 @@ const btn = document.querySelector('button');
 const btns = document.querySelectorAll('.choice');
 
 btns.forEach(btn => btn.addEventListener("click", function(e){
+    btn.classList.toggle('choiceFocus');
     let usrChose = this.textContent;
-
+    
     playRound(usrChose);
 }));
 
