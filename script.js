@@ -16,7 +16,6 @@ results.appendChild(declare);
 cpuScore.appendChild(cpuDeclare);
 usrScore.appendChild(usrDeclare);
 rndCount.appendChild(rndsDeclare);
-plyArea.appendChild(againButton);
 
 
 let usrPoints = 0;
@@ -56,8 +55,8 @@ function playRound(userTurn, compTurn){
 
     //Actions at the end of a match
     function endOfMatch(){
-        plyArea.appendChild(againButton);
         choices.remove();
+        plyArea.appendChild(againButton);
         againButton.textContent = "Try again?";
         againButton.classList.add('tryAgain');
         againButton.addEventListener("click", tryAgain);

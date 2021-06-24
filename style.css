@@ -35,6 +35,21 @@ html {
     margin: 15px 70px 15px 70px;
     width: 200px;
     height: 200px;
+    border:rgb(156, 102, 30) 10px solid;
+    border-radius: 20%;
+    color:rgba(112, 56, 56, 0) ;
+    background-color: rgba(112, 56, 56, 0);
+    transition: border 0.7s, border-radius 0.7s, box-shadow 1s;
+}
+
+.choice:hover, .tryAgain:hover{
+    border: orange 12px solid;
+    border-radius: 5%;
+    box-shadow: 2px 5px 20px orange;
+}
+
+.choiceClicked {
+    box-shadow: 5px 5px 5px orange;
 }
 
 
@@ -53,12 +68,15 @@ html {
 #info {
     color: #ecd386;
     font-family: sans-serif;
-    font-size: 21px;
+    font-size: 22px;
     line-height: 150%;
     font-family: 'Ropa Sans', cursive;
 }
 
 #results > h2 {
     height: 50px;
-    color: olive;
+    color: rgb(131, 153, 120);
+    font-size: 30px;
+    font-family: 'Rope Sans', sans-serif;
 }
+
