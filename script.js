@@ -79,6 +79,7 @@ function playRound(userTurn, compTurn){
             setTimeout(() => {
                 declare.textContent = `You both chose ${userTurn}! It's a tie!`;
                 stats();
+                
             }, 500);
             //btn.classList.toggle('choiceFocus', false);
             break;
@@ -87,24 +88,29 @@ function playRound(userTurn, compTurn){
         case (userTurn == "rock" && compTurn == "scissors") || (userTurn == "paper" && compTurn == "rock") || (userTurn == "scissors" && compTurn == "paper"): 
             usrPoints += 1; 
             rnds += 1;
+            btns.forEach(btn => btn.classList.remove('flashingBorder'));
             setTimeout(() => {
+                btns.forEach(btn => btn.classList.add('flashingBorder'));
                 declare.textContent = `Lurker chose ${compTurn}. You win!`;
                 stats();
             }, 500);
-            //btn.classList.toggle('choiceFocus', false);
-            break;
             
-            //Annouces loss and updates score with 1 second delay
+        break;
+            
+        //Annouces loss and updates score with 1 second delay
         default:
             cpuPoints += 1; 
             rnds += 1;
+            btns.forEach(btn => btn.classList.remove('flashingBorderLose'));
             setTimeout(() => {
+                btns.forEach(btn => btn.classList.add('flashingBorderLose'));
                 declare.textContent = `Lurker chose ${compTurn} and wins!`;
             stats();
+            
             }, 500);
-            //btn.classList.toggle('choiceFocus', false);
+           
         break;  
-    }
+        }
 
     //Determine overall winner
     if((usrPoints == 5 && usrPoints > cpuPoints)){

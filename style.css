@@ -60,9 +60,55 @@ html {
     box-shadow: 5px 5px 5px orange;
 }
 
+@keyframes flashing{
+    0%{
+        border:rgb(170, 170, 49) 10px solid;
+        box-shadow: 1px 1px 5px rgb(159, 219, 90);
+    }
+    50% {
+        border:rgb(170, 170, 49) 12px solid;
+        box-shadow: 5px 5px 20px rgb(133, 197, 80);
+    }
+    100% {
+        border:rgb(170, 170, 49) 10px solid;
+        box-shadow: 3px 3px 40px rgb(159, 219, 90);
+    }
+    /* 75% {
+        border:rgb(170, 170, 49) 12px solid;
+        box-shadow: 5px 5px 20px rgb(159, 219, 90);
+    }
+    100% {
+        border:rgb(170, 170, 49) 10px solid;
+        box-shadow: 3px 3px 10px rgb(159, 219, 90);
+    }
+     100% {
+        border:rgb(108, 156, 30) 12px solid;
+        box-shadow: 5px 5px 20px rgb(133, 197, 80); 
+    } */
+}
 
+@keyframes loseFlashing {
+    0%{
+        border:rgb(170, 49, 49) 10px solid;
+        box-shadow: 1px 1px 5px rgb(255, 52, 52);
+    }
+    50% {
+        border:rgb(170, 49, 49) 12px solid;
+        box-shadow: 5px 5px 20px rgb(170, 49, 49);
+    }
+    100% {
+        border:rgb(170, 49, 49) 10px solid;
+        box-shadow: 3px 3px 40px rgb(170, 49, 49);
+    }
+}
 
+.flashingBorder {
+    animation: flashing 1.5s;
+}
 
+.flashingBorderLose {
+    animation: loseFlashing 1.5s;
+}
 #choices, #usr-play {
     text-align: center;
     height: 250px;
