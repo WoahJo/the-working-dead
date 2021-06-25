@@ -45,6 +45,11 @@ html {
     transition: border 0.7s, border-radius 0.7s, box-shadow 1s;
 }
 
+.choiceFocus {
+    border: rgb(170, 170, 49) 12px solid;
+    box-shadow: 2px 5px 20px rgb(159, 219, 90);
+}
+
 .choice:hover, .tryAgain:hover{
     border: orange 12px solid;
     border-radius: 5%;
@@ -55,10 +60,6 @@ html {
     box-shadow: 5px 5px 5px orange;
 }
 
-.choiceFocus {
-    border: rgb(170, 170, 49) 12px solid;
-    box-shadow: 2px 5px 20px rgb(159, 219, 90);
-}
 
 
 

@@ -80,7 +80,7 @@ function playRound(userTurn, compTurn){
                 declare.textContent = `You both chose ${userTurn}! It's a tie!`;
                 stats();
             }, 500);
-            btn.classList.toggle('choiceFocus', false);
+            //btn.classList.toggle('choiceFocus', false);
             break;
 
         //Announces win and updates score with a 1 second delay
@@ -91,7 +91,7 @@ function playRound(userTurn, compTurn){
                 declare.textContent = `Lurker chose ${compTurn}. You win!`;
                 stats();
             }, 500);
-            btn.classList.toggle('choiceFocus', false);
+            //btn.classList.toggle('choiceFocus', false);
             break;
             
             //Annouces loss and updates score with 1 second delay
@@ -102,7 +102,7 @@ function playRound(userTurn, compTurn){
                 declare.textContent = `Lurker chose ${compTurn} and wins!`;
             stats();
             }, 500);
-            btn.classList.toggle('choiceFocus', false);
+            //btn.classList.toggle('choiceFocus', false);
         break;  
     }
 
@@ -127,6 +127,9 @@ const btns = document.querySelectorAll('.choice');
 
 btns.forEach(btn => btn.addEventListener("click", function(e){
     btn.classList.toggle('choiceFocus');
+    setTimeout(() => {
+        btn.classList.toggle('choiceFocus');
+    }, 2000)
     let usrChose = this.textContent;
     
     playRound(usrChose);
