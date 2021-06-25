@@ -79,16 +79,14 @@ function playRound(userTurn, compTurn){
             setTimeout(() => {
                 declare.textContent = `You both chose ${userTurn}! It's a tie!`;
                 stats();
-                
             }, 500);
-            //btn.classList.toggle('choiceFocus', false);
             break;
 
         //Announces win and updates score with a 1 second delay
         case (userTurn == "rock" && compTurn == "scissors") || (userTurn == "paper" && compTurn == "rock") || (userTurn == "scissors" && compTurn == "paper"): 
             usrPoints += 1; 
             rnds += 1;
-            btns.forEach(btn => btn.classList.remove('flashingBorder'));
+            btns.forEach(btn => btn.classList.remove('flashingBorder', 'flashingBorderLose'));
             setTimeout(() => {
                 btns.forEach(btn => btn.classList.add('flashingBorder'));
                 declare.textContent = `Lurker chose ${compTurn}. You win!`;
@@ -101,12 +99,11 @@ function playRound(userTurn, compTurn){
         default:
             cpuPoints += 1; 
             rnds += 1;
-            btns.forEach(btn => btn.classList.remove('flashingBorderLose'));
+            btns.forEach(btn => btn.classList.remove('flashingBorderLose', 'flashingBorder'));
             setTimeout(() => {
                 btns.forEach(btn => btn.classList.add('flashingBorderLose'));
                 declare.textContent = `Lurker chose ${compTurn} and wins!`;
-            stats();
-            
+                stats();
             }, 500);
            
         break;  
@@ -115,18 +112,17 @@ function playRound(userTurn, compTurn){
     //Determine overall winner
     if((usrPoints == 5 && usrPoints > cpuPoints)){
         choices.remove();
-        setTimeout(() => {declare.textContent = `You beat the Lurker in ${rnds} rounds! Try again?`;
+        setTimeout(() => {declare.textContent = `You beat the Lurker! Try again?`;
         endOfMatch();
-        }, 3000);
+        }, 2000);
     }
     else if (cpuPoints == 5 && cpuPoints > usrPoints){
         choices.remove();
-        setTimeout(() => {declare.textContent = `Lurker beat you in ${rnds} rounds! Try again?`; 
+        setTimeout(() => {declare.textContent = `Lurker beat you! Try again?`; 
         endOfMatch();
-        }, 3000);
+        }, 2000);
     }
 }
-// playRound();
 
 const btn = document.querySelector('button');
 const btns = document.querySelectorAll('.choice');
@@ -135,11 +131,10 @@ btns.forEach(btn => btn.addEventListener("click", function(e){
     btn.classList.toggle('choiceFocus');
     setTimeout(() => {
         btn.classList.toggle('choiceFocus');
-    }, 2000)
+    }, 1500)
     let usrChose = this.textContent;
     
     playRound(usrChose);
 }));
 
 
-// game();

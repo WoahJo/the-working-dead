@@ -73,18 +73,6 @@ html {
         border:rgb(170, 170, 49) 10px solid;
         box-shadow: 3px 3px 40px rgb(159, 219, 90);
     }
-    /* 75% {
-        border:rgb(170, 170, 49) 12px solid;
-        box-shadow: 5px 5px 20px rgb(159, 219, 90);
-    }
-    100% {
-        border:rgb(170, 170, 49) 10px solid;
-        box-shadow: 3px 3px 10px rgb(159, 219, 90);
-    }
-     100% {
-        border:rgb(108, 156, 30) 12px solid;
-        box-shadow: 5px 5px 20px rgb(133, 197, 80); 
-    } */
 }
 
 @keyframes loseFlashing {
@@ -94,11 +82,11 @@ html {
     }
     50% {
         border:rgb(170, 49, 49) 12px solid;
-        box-shadow: 5px 5px 20px rgb(170, 49, 49);
+        box-shadow: 5px 5px 20px rgb(255, 70, 70);
     }
     100% {
         border:rgb(170, 49, 49) 10px solid;
-        box-shadow: 3px 3px 40px rgb(170, 49, 49);
+        box-shadow: 3px 3px 40px rgb(255, 70, 70);
     }
 }
 
