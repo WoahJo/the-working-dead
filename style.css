@@ -23,8 +23,8 @@ html {
     align-items: center;
     display: inline-block;
     width: 225px;
-    padding: 50px;
-    padding-top: 25px;
+    padding: 20px;
+    padding-top: 10px;
     color: rgb(240, 84, 48);
     font-family: 'Ropa Sans', sans-serif; 
     font-size: 23px;
@@ -36,8 +36,8 @@ html {
 
 .choice,  .tryAgain {
     margin: 15px 70px 15px 70px;
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
     border:rgb(156, 102, 30) 10px solid;
     border-radius: 20%;
     color:rgba(112, 56, 56, 0) ;
@@ -67,11 +67,11 @@ html {
     }
     50% {
         border:rgb(170, 170, 49) 12px solid;
-        box-shadow: 5px 5px 20px rgb(133, 197, 80);
+        box-shadow: 5px 5px 40px rgb(133, 197, 80);
     }
     100% {
-        border:rgb(170, 170, 49) 10px solid;
-        box-shadow: 3px 3px 40px rgb(159, 219, 90);
+        border:rgb(156, 102, 30) 10px solid;
+        box-shadow: 1px 1px 5px rgb(156, 102, 30);
     }
 }
 
@@ -85,8 +85,8 @@ html {
         box-shadow: 5px 5px 20px rgb(255, 70, 70);
     }
     100% {
-        border:rgb(170, 49, 49) 10px solid;
-        box-shadow: 3px 3px 40px rgb(255, 70, 70);
+        border:rgb(156, 102, 30) 10px solid;
+        box-shadow: 1px 1px 5px rgb(156, 102, 30);
     }
 }
 
