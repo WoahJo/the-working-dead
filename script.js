@@ -17,7 +17,6 @@ cpuScore.appendChild(cpuDeclare);
 usrScore.appendChild(usrDeclare);
 rndCount.appendChild(rndsDeclare);
 
-
 let usrPoints = 0;
 let cpuPoints = 0;
 let rnds = 0;
@@ -93,7 +92,7 @@ function playRound(userTurn, compTurn){
                 stats();
             }, 500);
             
-        break;
+            break;
             
         //Annouces loss and updates score with 1 second delay
         default:
@@ -106,7 +105,7 @@ function playRound(userTurn, compTurn){
                 stats();
             }, 500);
            
-        break;  
+            break;  
         }
 
     //Determine overall winner
