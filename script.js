@@ -112,7 +112,7 @@ function playRound(userTurn, compTurn){
     //Determine overall winner
     if((usrPoints == 5 && usrPoints > cpuPoints)){
         choices.remove();
-        setTimeout(() => {declare.textContent = `You beat the Lurker! Try again?`;
+        setTimeout(() => {declare.textContent = `You beat the Lurker! Go again?`;
         endOfMatch();
         }, 2000);
     }
