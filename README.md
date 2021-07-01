@@ -11,4 +11,5 @@
 - Points and rounds are tracked.
 - The game ends when either the user or cpu gains 5 points.  
   - When a player reaches 5 points, the selections disappear to avoid further selections.
-  - A 'Try again?' button appears after each completed match.
+  - A 'Try again?' button appears after each completed match.  
+- Icons were created by me.
