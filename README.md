@@ -1,6 +1,8 @@
 # The Working Dead
 *Finally, the apocalypse is amongst us! We've all been waiting to creatively smash in some zombie heads since Night of the Living Dead. No chainsaws or nail-studded bats for you, unfortunately -- you're stuck at work with only paper, scissors and your pet rock/only friend Steve to defend yourself. Your nearly-undead colleague has access to the same. Will you be able to defeat your lurker co-worker and escape the office or will you join it and become THE WORKING DEAD?*  
   
+**[Play here!](https://woahjo.github.io/the-working-dead/)**  
+  
 ## Features: 
 - Selections glow gold when hovered over.  
 - Selections glow green briefly after clicking.  
